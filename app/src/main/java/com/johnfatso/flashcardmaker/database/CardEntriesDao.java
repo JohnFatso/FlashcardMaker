@@ -23,4 +23,16 @@ public interface CardEntriesDao {
 
     @Query("DELETE FROM card_entries WHERE unique_id=:unique_id")
     void deleteEntry(int unique_id );
+
+    @Query("UPDATE card_entries SET front_text=:frontText, back_text=:backText WHERE unique_id=:primary_key")
+    void updateCardEntryText(int primary_key, String frontText, String backText);
+
+    @Query("UPDATE card_entries SET access_count=:accessCount, success_count=:successCount, failure_count=:failureCount WHERE unique_id=:unique_id")
+    void updateCardEntryAccessCount(int unique_id, int accessCount, int successCount, int failureCount);
+
+    @Query("UPDATE card_entries SET last_result=:last_results WHERE unique_id=:unique_id")
+    void updateCardEntryLastResult(int unique_id, int last_results);
+
+    @Query("UPDATE card_entries SET category=:newName WHERE category=:oldName")
+    void updateCardCategoryName(String oldName, String newName);
 }
