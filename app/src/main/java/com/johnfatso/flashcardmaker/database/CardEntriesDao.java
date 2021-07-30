@@ -16,13 +16,19 @@ public interface CardEntriesDao {
     List<CardEntriesEntity> getAllCards();
 
     @Query("SELECT * FROM card_entries WHERE category=:category ORDER BY unique_id ASC")
-    List<CardEntriesEntity> getAllCardOfCategory(String category);
+    List<CardEntriesEntity> getAllCardsOfCategory(String category);
+
+    @Query("SELECT DISTINCT category FROM card_entries ORDER BY category ASC")
+    List<String> getListOfCategories();
 
     @Query("DELETE FROM card_entries")
     void deleteAll();
 
     @Query("DELETE FROM card_entries WHERE unique_id=:unique_id")
     void deleteEntry(int unique_id );
+
+    @Query("DELETE FROM card_entries WHERE category=:category")
+    void deleteCategory(String category);
 
     @Query("UPDATE card_entries SET front_text=:frontText, back_text=:backText WHERE unique_id=:primary_key")
     void updateCardEntryText(int primary_key, String frontText, String backText);
