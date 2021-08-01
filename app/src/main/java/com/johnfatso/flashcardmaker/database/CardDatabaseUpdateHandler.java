@@ -2,6 +2,9 @@ package com.johnfatso.flashcardmaker.database;
 
 import android.app.Application;
 
+/**
+ * class for mediating the transaction between the client and the repository
+ */
 class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
     private final CardEntryRepository repository;
 
