@@ -76,6 +76,17 @@ public class CardEntriesEntity {
         this.last_test_result = 0;
     }
 
+    public CardEntriesEntity(CardEntriesEntity card){
+        this.uniqueid = card.getUniqueid();
+        this.front_text = card.getFront_text();
+        this.back_text = card.getBack_text();
+        this.category = card.getCategory();
+        this.access_count = card.getAccess_count();
+        this.success_count = card.getSuccess_count();
+        this.failure_count = card.getFailure_count();
+        this.last_test_result = card.getLast_test_result();
+    }
+
     public int getUniqueid() {
         return uniqueid;
     }
@@ -138,6 +149,14 @@ public class CardEntriesEntity {
 
     public void setLast_test_result(int last_test_result) {
         this.last_test_result = last_test_result;
+    }
+
+    public void setLast_test_result(boolean last_test_result){
+        this.last_test_result = last_test_result?1:0;
+    }
+
+    public void incrementAccessCount(){
+        this.access_count++;
     }
 
     public void incrementSuccessCount(){
