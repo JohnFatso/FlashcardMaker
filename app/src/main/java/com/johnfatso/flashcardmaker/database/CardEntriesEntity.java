@@ -32,20 +32,44 @@ public class CardEntriesEntity {
     @ColumnInfo(name = "last_result")
     public int last_test_result;
 
-    public CardEntriesEntity(int uniqueid, String front_text, String back_text, int access_count, int success_count, int failure_count, int last_test_result) {
+    public CardEntriesEntity(int uniqueid, String front_text, String back_text, String category, int access_count, int success_count, int failure_count, int last_test_result) {
         this.uniqueid = uniqueid;
         this.front_text = front_text;
         this.back_text = back_text;
+        this.category = category;
         this.access_count = access_count;
         this.success_count = success_count;
         this.failure_count = failure_count;
         this.last_test_result = last_test_result;
     }
 
+    public CardEntriesEntity(String category) {
+        this.uniqueid = (int)Calendar.getInstance().getTime().getTime();
+        this.front_text = "";
+        this.back_text = "";
+        this.category = category;
+        this.access_count = 0;
+        this.success_count = 0;
+        this.failure_count = 0;
+        this.last_test_result = 0;
+    }
+
     public CardEntriesEntity() {
         this.uniqueid = (int)Calendar.getInstance().getTime().getTime();
         this.front_text = "";
         this.back_text = "";
+        this.category = "";
+        this.access_count = 0;
+        this.success_count = 0;
+        this.failure_count = 0;
+        this.last_test_result = 0;
+    }
+
+    public CardEntriesEntity(String front_text, String back_text, String category) {
+        this.uniqueid = (int)Calendar.getInstance().getTime().getTime();
+        this.front_text = front_text;
+        this.back_text = back_text;
+        this.category = category;
         this.access_count = 0;
         this.success_count = 0;
         this.failure_count = 0;
