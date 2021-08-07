@@ -1,5 +1,6 @@
 package com.johnfatso.flashcardmaker.database;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -169,4 +170,9 @@ public class CardEntriesEntity {
         this.failure_count++;
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return "< "+this.uniqueid+" | "+ this.front_text+" | "+this.back_text+" |" + super.toString()+" >";
+    }
 }

@@ -1,19 +1,23 @@
 package com.johnfatso.flashcardmaker.database;
 
 import android.app.Application;
+import android.util.Log;
 
 /**
  * class for mediating the transaction between the client and the repository
  */
 class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
     private final CardEntryRepository repository;
+    private final String LOG_TAG = "DATABASE";
 
     public CardDatabaseUpdateHandler(CardEntryRepository repository) {
         this.repository = repository;
+        Log.v(LOG_TAG, this.getClass().getName() + " | object created");
     }
 
     public CardDatabaseUpdateHandler(Application application) {
         this.repository = CardEntryRepository.getInstance(application);
+        Log.v(LOG_TAG, this.getClass().getName() + "object created with application context: " + application);
     }
 
     /**
@@ -23,6 +27,7 @@ class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
      */
     @Override
     public void addCard(CardEntriesEntity card) {
+        Log.v(LOG_TAG, this.getClass().getName() + " | " + "addCard | card: " + card);
         this.repository.addCard(card);
     }
 
@@ -33,6 +38,7 @@ class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
      */
     @Override
     public void updateCard(CardEntriesEntity card) {
+        Log.v(LOG_TAG, this.getClass().getName() + " | updateCard | card : " + card);
         this.repository.updateCard(card);
     }
 
@@ -44,6 +50,7 @@ class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
      */
     @Override
     public void updateAccessCount(CardEntriesEntity card) {
+        Log.v(LOG_TAG, this.getClass().getName() + " | updateAccessCount | card: "+card+" | increment access from: "+card.getAccess_count());
         CardEntriesEntity temp = new CardEntriesEntity(card);
         temp.incrementAccessCount();
         repository.updateAccessCount(temp);
@@ -57,6 +64,7 @@ class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
      */
     @Override
     public void updateSuccess(CardEntriesEntity card) {
+        Log.v(LOG_TAG, this.getClass().getName() + " | updateSuccessCount | card: "+card+" | increment success from: "+card.getSuccess_count());
         CardEntriesEntity temp = new CardEntriesEntity(card);
         temp.incrementSuccessCount();
         repository.updateAccessCount(temp);
@@ -70,6 +78,7 @@ class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
      */
     @Override
     public void updateFailure(CardEntriesEntity card) {
+        Log.v(LOG_TAG, this.getClass().getName() + " | updateFailureCount | card: "+card+" | increment failure from: "+card.getAccess_count());
         CardEntriesEntity temp = new CardEntriesEntity(card);
         temp.incrementFailureCount();
         repository.updateAccessCount(temp);
@@ -84,6 +93,7 @@ class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
      */
     @Override
     public void updateLastResults(CardEntriesEntity card, boolean lastResult) {
+        Log.v(LOG_TAG, this.getClass().getName() + " | updateLastResults | card: "+card+" | change result from "+card.getAccess_count() + " to "+lastResult);
         CardEntriesEntity temp = new CardEntriesEntity(card);
         temp.setLast_test_result(lastResult);
         repository.updateAccessCount(temp);
@@ -98,6 +108,7 @@ class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
      */
     @Override
     public void updateCardContents(CardEntriesEntity card, String frontText, String backText) {
+        Log.v(LOG_TAG, this.getClass().getName() + " | updateCardContents | card: "+card+" | update content to "+frontText + " & "+backText);
         CardEntriesEntity temp = new CardEntriesEntity(card);
         temp.setFront_text(frontText);
         temp.setBack_text(backText);
@@ -112,6 +123,7 @@ class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
      */
     @Override
     public void changeCategoryName(String previousName, String newName) {
+        Log.v(LOG_TAG, this.getClass().getName() + " | changeCategoryName | update from "+previousName+" to "+newName);
         repository.changeCategoryName(previousName, newName);
     }
 
@@ -122,6 +134,7 @@ class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
      */
     @Override
     public void deleteCategory(String categoryName) {
+        Log.v(LOG_TAG, this.getClass().getName() + " | deleteCategory | delete all cards from category "+categoryName);
         repository.deleteCategory(categoryName);
     }
 
@@ -132,6 +145,7 @@ class CardDatabaseUpdateHandler implements CardDatabaseUpdateHandlerInterface {
      */
     @Override
     public void deleteCard(CardEntriesEntity card) {
+        Log.v(LOG_TAG, this.getClass().getName() + " | deleteCard | delete card: "+card);
         repository.deleteCard(card);
     }
 }
