@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FlashcardMaker</string>
+    <string name="homemenu_button_viewButton">VIEW</string>
+    <string name="homemenu_button_editButton">EDIT</string>
 </resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="guideline_homemenu_percent_divider">0.6</dimen>
+    <dimen name="guideline_homemenu_percent_divider_bottom">0.9</dimen>
+    <dimen name="guideline_homemenu_buttonGuide_start">0.25</dimen>
+    <dimen name="guideline_homemenu_buttonGuide_end">0.75</dimen>
+
+    <dimen name="button_height_homemenu_viewButton">0dp</dimen>
+    <dimen name="button_width_homemenu_viewButton">0dp</dimen>
+    <dimen name="button_height_homemenu_editButton">0dp</dimen>
+    <dimen name="button_width_homemenu_editButton">0dp</dimen>
+
+    <dimen name="margin_vertical_homemenu_viewButton">10dp</dimen>
+    <dimen name="margin_horizontal_homemenu_viewButton">0dp</dimen>
+    <dimen name="margin_vertical_homemenu_editButton">10dp</dimen>
+    <dimen name="margin_horizontal_homemenu_editButton">0dp</dimen>
+</resources>

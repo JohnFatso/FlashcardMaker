@@ -2,38 +2,60 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
+    android:id="@+id/constraint_layout_homemenu"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/Homescreen_Container_HomeMenuButtons"
-        android:layout_width="374dp"
-        android:layout_height="133dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.68">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homemenu_button_area_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/guideline_homemenu_percent_divider"/>
 
-        <Button
-            android:id="@+id/homeScreen_Button_ViewFlashCard"
-            android:layout_width="295dp"
-            android:layout_height="39dp"
-            android:background="#FFFFFF"
-            android:text="View Flash Card"
-            app:iconTint="#C8A3A3"
-            tools:layout_editor_absoluteX="37dp"
-            tools:layout_editor_absoluteY="16dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homemenu_button_area_divider_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="@dimen/guideline_homemenu_percent_divider_bottom"/>
 
-        <Button
-            android:id="@+id/homeScreen_Button_TakeChallenge"
-            android:layout_width="293dp"
-            android:layout_height="38dp"
-            android:text="Take Challenge"
-            tools:layout_editor_absoluteX="39dp"
-            tools:layout_editor_absoluteY="79dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homemenu_button_width_guide_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/guideline_homemenu_buttonGuide_start"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_homemenu_button_width_guide_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="@dimen/guideline_homemenu_buttonGuide_end"/>
+
+    <Button
+        android:id="@+id/button_homemenu_view"
+        android:layout_width="@dimen/button_width_homemenu_viewButton"
+        android:layout_height="@dimen/button_height_homemenu_viewButton"
+        android:layout_marginVertical="@dimen/margin_vertical_homemenu_viewButton"
+        android:text="@string/homemenu_button_viewButton"
+        app:layout_constraintStart_toStartOf="@id/guideline_homemenu_button_width_guide_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_homemenu_button_width_guide_end"
+        app:layout_constraintTop_toBottomOf="@id/guideline_homemenu_button_area_divider"
+        app:layout_constraintBottom_toTopOf="@id/button_homemenu_edit"
+        />
+
+    <Button
+        android:id="@+id/button_homemenu_edit"
+        android:layout_width="@dimen/button_width_homemenu_editButton"
+        android:layout_height="@dimen/button_height_homemenu_editButton"
+        android:layout_marginVertical="@dimen/margin_vertical_homemenu_editButton"
+        android:text="@string/homemenu_button_editButton"
+        app:layout_constraintTop_toBottomOf="@id/button_homemenu_view"
+        app:layout_constraintStart_toStartOf="@id/guideline_homemenu_button_width_guide_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_homemenu_button_width_guide_end"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_homemenu_button_area_divider_bottom"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
