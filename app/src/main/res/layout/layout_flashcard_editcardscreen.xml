@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout_editcardscreen_outerframe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_editcardscreen_horizontal_card_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_editcardscreen_horizontal_card_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_editcardscreen_horizontal_button_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_editcardscreen_horizontal_button_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_editcardscreen_vertical_card_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_editcardscreen_vertical_button1_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_editcardscreen_vertical_button1_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_editcardscreen_vertical_button2_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_editcardscreen_vertical_button2_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_editcardscreen_vertical_card_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/guideline_editcardscreen_vertical_card_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_editcardscreen_vertical_card_end"
+        app:layout_constraintTop_toBottomOf="@id/guideline_editcardscreen_horizontal_card_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_editcardscreen_horizontal_card_bottom">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_editcardscreen_vertical_content_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_editcardscreen_vertical_content_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_editcardscreen_horizontal_title_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.10"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_editcardscreen_horizontal_title_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.20"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_editcardscreen_horizontal_content_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.30"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_editcardscreen_horizontal_content_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9"
+            />
+
+        <TextView
+            android:id="@+id/textview_editcardscreen_cardtitle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/guideline_editcardscreen_vertical_content_start"
+            app:layout_constraintEnd_toStartOf="@id/guideline_editcardscreen_vertical_content_end"
+            app:layout_constraintTop_toBottomOf="@id/guideline_editcardscreen_horizontal_title_top"
+            app:layout_constraintBottom_toTopOf="@id/guideline_editcardscreen_horizontal_title_bottom"
+            />
+
+        <EditText
+            android:id="@+id/edittextview_editcardscreen_cardcontent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/guideline_editcardscreen_vertical_content_start"
+            app:layout_constraintEnd_toStartOf="@id/guideline_editcardscreen_vertical_content_end"
+            app:layout_constraintTop_toBottomOf="@id/guideline_editcardscreen_horizontal_content_top"
+            app:layout_constraintBottom_toTopOf="@id/guideline_editcardscreen_horizontal_content_bottom"
+            android:background="none"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button_editcardbutton_accept"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/guideline_editcardscreen_vertical_button1_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_editcardscreen_vertical_button1_end"
+        app:layout_constraintTop_toBottomOf="@id/guideline_editcardscreen_horizontal_button_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_editcardscreen_horizontal_button_bottom"
+        />
+
+    <Button
+        android:id="@+id/button_editcardbutton_decline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/guideline_editcardscreen_vertical_button2_start"
+        app:layout_constraintEnd_toStartOf="@id/guideline_editcardscreen_vertical_button2_end"
+        app:layout_constraintTop_toBottomOf="@id/guideline_editcardscreen_horizontal_button_top"
+        app:layout_constraintBottom_toTopOf="@id/guideline_editcardscreen_horizontal_button_bottom"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
