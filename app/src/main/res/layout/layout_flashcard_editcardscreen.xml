@@ -88,6 +88,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/drawable_card"
+        android:elevation="8dp"
+
         app:layout_constraintStart_toEndOf="@id/guideline_editcardscreen_vertical_card_start"
         app:layout_constraintEnd_toStartOf="@id/guideline_editcardscreen_vertical_card_end"
         app:layout_constraintTop_toBottomOf="@id/guideline_editcardscreen_horizontal_card_top"
@@ -162,12 +165,27 @@
             android:background="none"
             />
 
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:src="@android:drawable/ic_menu_revert"
+            android:background="#FFEB3B"
+            app:layout_constraintStart_toEndOf="@id/guideline_editcardscreen_vertical_content_end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_editcardscreen_horizontal_content_bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            android:contentDescription="switch card side"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/button_editcardbutton_accept"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:elevation="4dp"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toEndOf="@id/guideline_editcardscreen_vertical_button1_start"
         app:layout_constraintEnd_toStartOf="@id/guideline_editcardscreen_vertical_button1_end"
@@ -179,6 +197,7 @@
         android:id="@+id/button_editcardbutton_decline"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:elevation="4dp"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintStart_toEndOf="@id/guideline_editcardscreen_vertical_button2_start"
         app:layout_constraintEnd_toStartOf="@id/guideline_editcardscreen_vertical_button2_end"
