@@ -42,6 +42,7 @@
         android:orientation="horizontal"
         />
 
+    <!-- essential item-->
     <FrameLayout
         android:id="@+id/frame_groupScreen_listFrame"
         android:layout_width="match_parent"
@@ -78,6 +79,7 @@
         app:layout_constraintGuide_percent="0.7"
         />
 
+    <!-- essential item-->
     <Button
         android:layout_width="0dp"
         android:layout_height="0dp"

@@ -85,7 +85,9 @@
         app:layout_constraintGuide_percent="0.92"
         />
 
+    <!-- essential item-->
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_editcardscreen_card"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/drawable_card"
@@ -144,6 +146,7 @@
             app:layout_constraintGuide_percent="0.9"
             />
 
+        <!-- essential item-->
         <TextView
             android:id="@+id/textview_editcardscreen_cardtitle"
             android:layout_width="0dp"
@@ -154,6 +157,7 @@
             app:layout_constraintBottom_toTopOf="@id/guideline_editcardscreen_horizontal_title_bottom"
             />
 
+        <!-- essential item-->
         <EditText
             android:id="@+id/edittextview_editcardscreen_cardcontent"
             android:layout_width="0dp"
@@ -165,6 +169,7 @@
             android:background="none"
             />
 
+        <!-- essential item-->
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -181,6 +186,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- essential item-->
     <Button
         android:id="@+id/button_editcardbutton_accept"
         android:layout_width="0dp"
@@ -193,6 +199,7 @@
         app:layout_constraintBottom_toTopOf="@id/guideline_editcardscreen_horizontal_button_bottom"
         />
 
+    <!-- essential item-->
     <Button
         android:id="@+id/button_editcardbutton_decline"
         android:layout_width="0dp"

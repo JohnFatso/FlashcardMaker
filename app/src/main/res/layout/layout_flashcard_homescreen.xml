@@ -18,7 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="@dimen/guideline_homemenu_percent_divider_bottom"/>
+        app:layout_constraintGuide_percent="@dimen/guideline_homemenu_percent_divider_bottom"
+        app:layout_constraintBottom_toTopOf="@id/home_ad"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_homemenu_button_width_guide_start"
@@ -34,6 +35,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="@dimen/guideline_homemenu_buttonGuide_end"/>
 
+    <!-- essential item-->
     <Button
         android:id="@+id/button_homemenu_view"
         android:layout_width="@dimen/button_width_homemenu_viewButton"
@@ -46,6 +48,7 @@
         app:layout_constraintBottom_toTopOf="@id/button_homemenu_edit"
         />
 
+    <!-- essential item-->
     <Button
         android:id="@+id/button_homemenu_edit"
         android:layout_width="@dimen/button_width_homemenu_editButton"
@@ -56,6 +59,18 @@
         app:layout_constraintStart_toStartOf="@id/guideline_homemenu_button_width_guide_start"
         app:layout_constraintEnd_toEndOf="@id/guideline_homemenu_button_width_guide_end"
         app:layout_constraintBottom_toBottomOf="@id/guideline_homemenu_button_area_divider_bottom"
+        />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/home_ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
