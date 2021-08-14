@@ -74,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.11"
+        app:layout_constraintGuide_percent="0.12"
         />
 
     <androidx.constraintlayout.widget.Guideline
@@ -82,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.19"
+        app:layout_constraintGuide_percent="0.18"
         />
 
     <FrameLayout
@@ -109,7 +109,7 @@
         app:layout_constraintStart_toStartOf="@id/guideline_simplechallengescreen_vertical_control_start"
         app:layout_constraintTop_toBottomOf="@id/guideline_simplechallengescreen_horizontal_counter_top"
         app:layout_constraintBottom_toTopOf="@id/guideline_simplechallengescreen_horizontal_counter_bottom"
-        />
+        />                                   
 
     <TextView
         android:id="@+id/textview_simplechallengescreen_failurecounter"
@@ -130,10 +130,11 @@
         android:id="@+id/textview_simplechallengescreen_timer"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintDimensionRatio="7:3"
         android:gravity="center"
         android:autoSizeTextType="uniform"
         android:text="15"
+        android:background="@drawable/drawable_box_bg"
         app:layout_constraintStart_toEndOf="@id/textview_simplechallengescreen_successcounter"
         app:layout_constraintEnd_toStartOf="@id/textview_simplechallengescreen_failurecounter"
         app:layout_constraintTop_toBottomOf="@id/guideline_simplechallengescreen_horizontal_control_top"
