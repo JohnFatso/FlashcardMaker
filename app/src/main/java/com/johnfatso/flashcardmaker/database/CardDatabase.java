@@ -10,10 +10,11 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {CardEntriesEntity.class}, version = 1, exportSchema = true)
+@Database(entities = {CardEntriesEntity.class, CategoryEntity.class}, version = 1, exportSchema = true)
 public abstract class CardDatabase extends RoomDatabase {
 
     public abstract CardEntriesDao cardEntriesDao();
+    public abstract CategoryEntityDao categoryEntityDao();
     private static final String LOG_TAG = "DATABASE";
 
     private static volatile CardDatabase INSTANCE;

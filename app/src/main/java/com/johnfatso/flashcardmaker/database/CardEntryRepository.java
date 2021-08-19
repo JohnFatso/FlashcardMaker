@@ -15,10 +15,12 @@ public class CardEntryRepository implements CardRepositoryInterface{
     static private volatile CardEntryRepository INSTANCE;
 
     private final CardEntriesDao cardEntriesDao;
+    private final CategoryEntityDao categoryEntityDao;
 
     private CardEntryRepository(Application application) {
         CardDatabase db = CardDatabase.getInstance(application);
         this.cardEntriesDao = db.cardEntriesDao();
+        this.categoryEntityDao = db.categoryEntityDao();
     }
 
     public static CardEntryRepository getInstance(Application application){
@@ -71,7 +73,7 @@ public class CardEntryRepository implements CardRepositoryInterface{
     @Override
     public void getListOfCategories() {
         CardDatabase.databaseWriteExecutor.execute(()->{
-            ArrayList<String> categories = (ArrayList<String>) cardEntriesDao.getListOfCategories();
+            ArrayList<String> categories = (ArrayList<String>) categoryEntityDao.getAllCategoryNames();
             getListenerInfo().onCategoryListUpdatedListener.onCategoryUpdated(categories);
         });
     }
@@ -98,8 +100,8 @@ public class CardEntryRepository implements CardRepositoryInterface{
     @Override
     public void addCategory(String category) {
         CardDatabase.databaseWriteExecutor.execute(()->{
-            CardEntriesEntity card = new CardEntriesEntity("add a anew card!", "add a new card info!", category);
-            cardEntriesDao.insert(card);
+            CategoryEntity categoryEntity = new CategoryEntity(category);
+            categoryEntityDao.insert(categoryEntity);
             notifyCategoryContentChanged();
         });
     }
@@ -170,6 +172,7 @@ public class CardEntryRepository implements CardRepositoryInterface{
     public void changeCategoryName(String previousName, String newName) {
         CardDatabase.databaseWriteExecutor.execute(()->{
             cardEntriesDao.updateCardCategoryName(previousName, newName);
+            categoryEntityDao.updateCategoryName(previousName, newName);
             notifyCategoryContentChanged();
         });
     }
@@ -183,6 +186,7 @@ public class CardEntryRepository implements CardRepositoryInterface{
     public void deleteCategory(String categoryName) {
         CardDatabase.databaseWriteExecutor.execute(()->{
             cardEntriesDao.deleteCategory(categoryName);
+            categoryEntityDao.deleteCategoryByName(categoryName);
             notifyCategoryContentChanged();
             notifyCardContentChangedForCategory(categoryName);
         });

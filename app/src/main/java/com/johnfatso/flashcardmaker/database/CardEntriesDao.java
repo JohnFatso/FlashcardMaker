@@ -10,7 +10,7 @@ import java.util.List;
 @Dao
 public interface CardEntriesDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(CardEntriesEntity cardEntriesEntity);
+    void insert(CardEntriesEntity... cardEntriesEntity);
 
     @Query("SELECT * FROM card_entries ORDER BY unique_id ASC")
     List<CardEntriesEntity> getAllCards();
