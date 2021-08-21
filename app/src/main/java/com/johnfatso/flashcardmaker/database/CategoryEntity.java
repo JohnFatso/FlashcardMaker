@@ -2,6 +2,7 @@ package com.johnfatso.flashcardmaker.database;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
@@ -21,6 +22,7 @@ class CategoryEntity {
         this.category = category;
     }
 
+    @Ignore
     public CategoryEntity(String category) {
         this.uniqueid = (int) Calendar.getInstance().getTime().getTime();
         this.category = "category_name_here";

@@ -166,7 +166,7 @@
             app:layout_constraintEnd_toStartOf="@id/guideline_editcardscreen_vertical_content_end"
             app:layout_constraintTop_toBottomOf="@id/guideline_editcardscreen_horizontal_content_top"
             app:layout_constraintBottom_toTopOf="@id/guideline_editcardscreen_horizontal_content_bottom"
-            android:background="none"
+
             />
 
         <!-- essential item-->

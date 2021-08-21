@@ -80,7 +80,7 @@ public class CardDataViewModel extends AndroidViewModel implements CardViewModel
         else if (listOfCardsOfCurrentCategory.getValue().size() == 0){
             repository.getAllCardsOfCategory(category);
         }
-        return null;
+        return listOfCardsOfCurrentCategory;
     }
 
     /**

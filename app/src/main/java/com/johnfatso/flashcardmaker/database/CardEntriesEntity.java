@@ -3,6 +3,7 @@ package com.johnfatso.flashcardmaker.database;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import java.util.Calendar;
 
@@ -44,6 +45,7 @@ public class CardEntriesEntity {
         this.last_test_result = last_test_result;
     }
 
+    @Ignore
     public CardEntriesEntity(String category) {
         this.uniqueid = (int)Calendar.getInstance().getTime().getTime();
         this.front_text = "";
@@ -55,6 +57,7 @@ public class CardEntriesEntity {
         this.last_test_result = 0;
     }
 
+    @Ignore
     public CardEntriesEntity() {
         this.uniqueid = (int)Calendar.getInstance().getTime().getTime();
         this.front_text = "";
@@ -66,6 +69,7 @@ public class CardEntriesEntity {
         this.last_test_result = 0;
     }
 
+    @Ignore
     public CardEntriesEntity(String front_text, String back_text, String category) {
         this.uniqueid = (int)Calendar.getInstance().getTime().getTime();
         this.front_text = front_text;
@@ -77,6 +81,7 @@ public class CardEntriesEntity {
         this.last_test_result = 0;
     }
 
+    @Ignore
     public CardEntriesEntity(CardEntriesEntity card){
         this.uniqueid = card.getUniqueid();
         this.front_text = card.getFront_text();

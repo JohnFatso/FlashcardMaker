@@ -14,3 +14,4 @@
 .cxx
 local.properties
 app/src/main/res/layout/layout_test.xml
+.idea/deploymentTargetDropDown.xml

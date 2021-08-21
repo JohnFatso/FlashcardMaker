@@ -244,7 +244,7 @@ public class CardEntryRepository implements CardRepositoryInterface{
 
     /**
      * checks and returns if a listener info is available
-     * @return ListnerInfo object
+     * @return ListenerInfo object
      */
     ListenerInfo getListenerInfo(){
         if (listenerInfo==null){
